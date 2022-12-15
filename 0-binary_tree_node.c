@@ -7,46 +7,16 @@
  * Return: pointer to nn
 */
 
-binary_tree_t *binary_tree_node(binary_tree_t *parent, int value);
+binary_tree_t *binary_tree_node(binary_tree_t *parent, int value)
 {
 	binary_tree_t *nn = malloc(sizeof(nn));
-	binary_tree_t *parent;
-	binary_tree_t *current;
+	if (nn == NULL)
+	return (NULL);
 
-nn->n = n;
-nn->left = NULL;
-nn->right = NULL;
+	nn->n = value;
+	nn->parent = parent;
+	nn->left = NULL;
+	nn->right = NULL;
 
-	if (root == NULL)
-		root = nn;
-	else
-	{
-		current = root;
-		parent = null;
-	}
-	while (1)
-	{
-		parent = current;
-
-		if (n < parent->n)
-		{
-			current = current->left;
-
-			if (current == NULL)
-			parent->left = nn;
-			return;
-
-		}
-	}
-	else
-	{
-		current = current->right;
-
-		if (current == NULL)
-		{
-			parent->right = nn;
-			return;
-
-		}
-	}
+	return (nn);
 }
